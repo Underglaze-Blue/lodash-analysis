@@ -17,11 +17,11 @@
     import isObjectLike from './isObjectLike.js'
     import isPlainObject from './isPlainObject.js'
 ```
-> [getTag 源码分析](/internal/getTag)
+> [getTag 源码分析](../internal/getTag.md)
 > 
-> [isObjectLike 源码分析](/export/isObjectLike)
+> [isObjectLike 源码分析](./export/isObjectLike.md)
 > 
-> [isPlainObject 源码分析](/export/isPlainObject)
+> [isPlainObject 源码分析](./export/isPlainObject.md)
 > 
 
 ## Code
