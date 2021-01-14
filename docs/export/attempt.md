@@ -16,7 +16,7 @@
 ```js
     import isError from './isError.js'
 ```
-> [isError 源码分析](./export/isError.md)
+> [isError 源码分析](./isError.md)
 
 ## Code
 ```js

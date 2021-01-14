@@ -19,9 +19,9 @@
 ```
 > [getTag 源码分析](../internal/getTag.md)
 > 
-> [isObjectLike 源码分析](./export/isObjectLike.md)
+> [isObjectLike 源码分析](./isObjectLike.md)
 > 
-> [isPlainObject 源码分析](./export/isPlainObject.md)
+> [isPlainObject 源码分析](./isPlainObject.md)
 > 
 
 ## Code
