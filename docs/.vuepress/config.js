@@ -33,14 +33,17 @@ module.exports = {
         sidebarDepth: 0,
         children: [
           '/internal/getTag'
-        ]
+        ].sort()
       },
       {
         title: 'Export',
         collapsable: false,
         path: '/export/',
         sidebarDepth: 0,
-        children: [ /* ... */ ],
+        children: [
+          '/export/isError',
+          '/export/attempt'
+        ].sort(),
       }
     ]
 
