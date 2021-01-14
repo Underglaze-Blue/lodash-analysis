@@ -1,4 +1,8 @@
 module.exports = {
+  base: '/lodash-analysis/',
+  dest: 'dist',
+  title: 'Lodash 源码分析',
+  description: 'Analysis lodash.js deeply',
   themeConfig: {
     smoothScroll: true,
     repo: 'Underglaze-Blue/lodash-analysis',
