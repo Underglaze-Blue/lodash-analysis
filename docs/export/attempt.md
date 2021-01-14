@@ -39,7 +39,7 @@
 
 使用 `try catch` 处理有可能的 `func` 的报错，并且使用 `...args` 处理了参数的传递
 
-> [try catch](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/try...catch)
+> [try catch MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/try...catch)
 
 
 ## Example
