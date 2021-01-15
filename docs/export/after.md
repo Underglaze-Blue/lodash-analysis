@@ -1,0 +1,50 @@
+# after
+
+## Description 
+`after` 会返回一个函数，在调用这个函数 `n` 次后，会调用传入的 `func` 
+## Params
+`(n, func)`
+> n 次数
+> 
+> func 回调的函数
+> 
+
+## Return
+`Function`
+
+## Code
+```js
+    function after(n, func) {
+      if (typeof func !== 'function') {
+        throw new TypeError('Expected a function')
+      }
+      n = n || 0
+      return function(...args) {
+        if (--n < 1) {
+          return func.apply(this, args)
+        }
+      }
+    }
+```
+
+## Analyze
+1. `typeof func != 'function'`,如果传入的`func` 不是一个 `function`，则报错 `throw TypeError`
+2. 返回一个函数，函数每次调用时都会进行 `--n` 的操作，并对`n`判断，`n < 1` 时，则调用 `func.apply(this, args)`，`func` 的 `this` 会绑定创建函数的 `this`
+
+## Remark
+1. 采用闭包的概念，抛出了 `n`,每次函数调用都会改变 `n` 的值
+2. [闭包 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)
+3. [apply MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+4. [call MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+5. [call、apply、bind 区别](https://juejin.cn/post/6844903567967387656#comment)
+
+## Example
+```js
+    const a = after(2,()=>{console.log(1)})
+    
+    a()
+    a() // 1
+```
+
+## PS
+[call、apply、bind 区别 PNG](/assets/call_apply_bind.png)

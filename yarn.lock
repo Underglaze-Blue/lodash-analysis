@@ -292,7 +292,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
     "@babel/plugin-syntax-object-rest-spread" "^7.8.0"
-    "@babel/plugin-transform-parameters" "^7.12.1"
+    "@babel/plugin-transform-Paramseters" "^7.12.1"
 
 "@babel/plugin-proposal-optional-catch-binding@^7.12.1":
   version "7.12.1"
@@ -556,9 +556,9 @@
     "@babel/helper-plugin-utils" "^7.10.4"
     "@babel/helper-replace-supers" "^7.12.1"
 
-"@babel/plugin-transform-parameters@^7.12.1":
+"@babel/plugin-transform-Paramseters@^7.12.1":
   version "7.12.1"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-parameters/-/plugin-transform-parameters-7.12.1.tgz#d2e963b038771650c922eff593799c96d853255d"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-Paramseters/-/plugin-transform-Paramseters-7.12.1.tgz#d2e963b038771650c922eff593799c96d853255d"
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
@@ -687,7 +687,7 @@
     "@babel/plugin-transform-named-capturing-groups-regex" "^7.12.1"
     "@babel/plugin-transform-new-target" "^7.12.1"
     "@babel/plugin-transform-object-super" "^7.12.1"
-    "@babel/plugin-transform-parameters" "^7.12.1"
+    "@babel/plugin-transform-Paramseters" "^7.12.1"
     "@babel/plugin-transform-property-literals" "^7.12.1"
     "@babel/plugin-transform-regenerator" "^7.12.1"
     "@babel/plugin-transform-reserved-words" "^7.12.1"
@@ -2298,7 +2298,7 @@ cssnano-preset-default@^4.0.7:
     postcss-merge-rules "^4.0.3"
     postcss-minify-font-values "^4.0.2"
     postcss-minify-gradients "^4.0.2"
-    postcss-minify-params "^4.0.2"
+    postcss-minify-Paramss "^4.0.2"
     postcss-minify-selectors "^4.0.2"
     postcss-normalize-charset "^4.0.1"
     postcss-normalize-display-values "^4.0.2"
@@ -3397,7 +3397,7 @@ html-minifier@^3.2.3:
     clean-css "4.2.x"
     commander "2.17.x"
     he "1.2.x"
-    param-case "2.1.x"
+    Params-case "2.1.x"
     relateurl "0.2.x"
     uglify-js "3.4.x"
 
@@ -4721,9 +4721,9 @@ parallel-transform@^1.1.0:
     inherits "^2.0.3"
     readable-stream "^2.1.5"
 
-param-case@2.1.x:
+Params-case@2.1.x:
   version "2.1.1"
-  resolved "https://registry.yarnpkg.com/param-case/-/param-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"
+  resolved "https://registry.yarnpkg.com/Params-case/-/Params-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"
   dependencies:
     no-case "^2.2.0"
 
@@ -4959,9 +4959,9 @@ postcss-minify-gradients@^4.0.2:
     postcss "^7.0.0"
     postcss-value-parser "^3.0.0"
 
-postcss-minify-params@^4.0.2:
+postcss-minify-Paramss@^4.0.2:
   version "4.0.2"
-  resolved "https://registry.yarnpkg.com/postcss-minify-params/-/postcss-minify-params-4.0.2.tgz#6b9cef030c11e35261f95f618c90036d680db874"
+  resolved "https://registry.yarnpkg.com/postcss-minify-Paramss/-/postcss-minify-Paramss-4.0.2.tgz#6b9cef030c11e35261f95f618c90036d680db874"
   dependencies:
     alphanum-sort "^1.0.0"
     browserslist "^4.0.0"

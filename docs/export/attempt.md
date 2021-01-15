@@ -3,7 +3,7 @@
 ## Description 
 调用传入的 `func` ， 返回结果或者返回捕获到的错误
 
-## Param
+## Params
 `(func, args)`
 > func: function
 > 

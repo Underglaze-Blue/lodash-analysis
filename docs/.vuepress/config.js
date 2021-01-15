@@ -1,3 +1,18 @@
+const fs = require('fs');
+const path = require('path');
+const internal_filePath = path.resolve('./docs/internal/');
+const export_filePath = path.resolve('./docs/export/');
+
+function handleChildren(basePath, arr){
+  return arr.map(item => {
+    return `/${basePath}/${item}`
+  })
+}
+
+const internal_path = fs.readdirSync(internal_filePath).filter(item => item !== 'README.md')
+const export_path = fs.readdirSync(export_filePath).filter(item => item !== 'README.md')
+
+
 module.exports = {
   base: '/lodash-analysis/',
   dest: 'dist',
@@ -31,19 +46,14 @@ module.exports = {
         path: '/internal/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
         collapsable: false,
         sidebarDepth: 0,
-        children: [
-          '/internal/getTag'
-        ].sort()
+        children: handleChildren('internal', internal_path)
       },
       {
         title: 'Export',
         collapsable: false,
         path: '/export/',
         sidebarDepth: 0,
-        children: [
-          '/export/isError',
-          '/export/attempt'
-        ].sort(),
+        children: handleChildren('export', export_path),
       }
     ]
 

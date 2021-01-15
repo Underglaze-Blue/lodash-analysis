@@ -3,7 +3,7 @@
 ## Description
 通过 `Object.prototype.toString.call(value)` 来获取 `value` 的类型
 
-## Param
+## Params
 `value`
 
 ## Return

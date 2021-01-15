@@ -2,10 +2,10 @@
 
 ## Description 
 判断是否为 `Error`
-> `EvalError`/`RangeError`/`ReferenceError`/`SyntaxError`/`TypeError`/`URIError` 等
+> `EvalError` / `RangeError` / `ReferenceError` / `SyntaxError` / `TypeError` / `URIError` 等
 > 
 
-## Param
+## Params
 `value`
 
 ## Return
