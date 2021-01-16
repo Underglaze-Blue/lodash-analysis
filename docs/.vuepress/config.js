@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const internal_filePath = path.resolve('./docs/internal/');
 const export_filePath = path.resolve('./docs/export/');
+const other_filePath = path.resolve('./docs/other/')
 
 function handleChildren(basePath, arr){
   return arr.map(item => {
@@ -11,6 +12,7 @@ function handleChildren(basePath, arr){
 
 const internal_path = fs.readdirSync(internal_filePath).filter(item => item !== 'README.md')
 const export_path = fs.readdirSync(export_filePath).filter(item => item !== 'README.md')
+const other_path = fs.readdirSync(other_filePath).filter(item => item !== 'README.md')
 
 
 module.exports = {
@@ -32,7 +34,7 @@ module.exports = {
         text: 'Lodash',
         items: [
           { text: 'Lodash文档', link: 'https://www.lodashjs.com/' },
-          { text: 'Lodash github', link: 'https://github.com/lodash/lodash' }
+          { text: 'Lodash GitHub', link: 'https://github.com/lodash/lodash' }
         ]
       },
     ],
@@ -54,6 +56,13 @@ module.exports = {
         path: '/export/',
         sidebarDepth: 0,
         children: handleChildren('export', export_path),
+      },
+      {
+        title: 'Other',
+        collapsable: false,
+        path: '/other/',
+        sidebarDepth: 0,
+        children: handleChildren('other', other_path)
       }
     ]
 

@@ -33,10 +33,11 @@
 
 ## Remark
 1. 采用闭包的概念，抛出了 `n`,每次函数调用都会改变 `n` 的值
-2. [闭包 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)
-3. [apply MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
-4. [call MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
-5. [call、apply、bind 区别](https://juejin.cn/post/6844903567967387656#comment)
+2. call、apply、bind 的区别，用一句话总结就是，它们都是用来改变相关函数 this 的指向，但是 call 和 apply 是直接进行相关函数调用的；bind 不会执行相关函数，而是返回一个新的函数，这个新的函数已经自动绑定了新的 this 指向，开发者可以手动调用它。
+3. [闭包 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)
+4. [apply MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+5. [call MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+6. [call、apply、bind 区别](https://juejin.cn/post/6844903567967387656#comment)
 
 ## Example
 ```js
