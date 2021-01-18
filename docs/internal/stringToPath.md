@@ -58,7 +58,8 @@
 const rePropName = /[^.[\]]+|\[(?:([^"'][^[]*)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/
 ```
 
-![Regexp](/assets/complete_reg.png)
+<img style="zoom:2" :src="$withBase('/assets/reg_stringToPath_complete.png')" />
+
 > [Regexp 分析](https://regex101.com/r/0nt7oQ/1/)
 >
 
@@ -66,7 +67,7 @@ const rePropName = /[^.[\]]+|\[(?:([^"'][^[]*)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\
 
 1. `[^.[\]]+`
 
-<img style="zoom:2" :src="$withBase('/assets/reg_1.svg')" />
+<img style="zoom:2" :src="$withBase('/assets/reg_stringToPath_1.svg')" />
 
 匹配除 `.`, `[`, `]` 意外的字符一次或者更多次
 
@@ -83,7 +84,7 @@ const rePropName = /[^.[\]]+|\[(?:([^"'][^[]*)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\
 
 2. `\[(?:([^"'][^[]*)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]`
 
-<img width="300" style="zoom:3" :src="$withBase('/assets/reg_2.svg')" />
+<img width="300" style="zoom:3" :src="$withBase('/assets/reg_stringToPath_2.svg')" />
 
 > a[0].b
 
@@ -96,13 +97,13 @@ const rePropName = /[^.[\]]+|\[(?:([^"'][^[]*)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\
 
 - `([^"'][^[]*)`
 
-<img style="zoom:2" :src="$withBase('/assets/reg_2_1.svg')" />
+<img style="zoom:2" :src="$withBase('/assets/reg_stringToPath_2_1.svg')" />
 
 匹配 "空字符串"(非字符串表达式)
 
 - `(["'])`
 
-<img style="zoom:2" :src="$withBase('/assets/reg_2_2.svg')" />
+<img style="zoom:2" :src="$withBase('/assets/reg_stringToPath_2_2.svg')" />
 
 匹配 `"`, `'`
 
@@ -115,7 +116,7 @@ const rePropName = /[^.[\]]+|\[(?:([^"'][^[]*)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\
 
 -  `(["'])((?:(?!\2)[^\\]|\\.)*?)\2`
 
-<img style="zoom:2" :src="$withBase('/assets/reg_2_3.svg')" />
+<img style="zoom:2" :src="$withBase('/assets/reg_stringToPath_2_3.svg')" />
 
 匹配字符串，支持转移字符
 
@@ -132,14 +133,14 @@ const rePropName = /[^.[\]]+|\[(?:([^"'][^[]*)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\
 
 3. `(?=(?:\.|\[\])(?:\.|\[\]|$))`
 
-<img style="zoom:2" :src="$withBase('/assets/reg_3.svg')" />
+<img style="zoom:2" :src="$withBase('/assets/reg_stringToPath_3.svg')" />
 
 > .......    [][][][]
 >
 
 获取连续的 `.` 或者连续的 `[]` 中的间隔
 
-<img style="zoom:2" :src="$withBase('/assets/reg_3_1.png')" />
+<img style="zoom:2" :src="$withBase('/assets/reg_stringToPath_3_1.png')" />
 
 
 > x(?=y)
