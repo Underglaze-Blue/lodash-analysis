@@ -156,3 +156,6 @@ call、apply、bind 的区别，用一句话总结就是，它们都是用来改
     console.log(foo.fn())
 ```
 通过箭头函数可以将 this 指向到 fn
+
+
+[this MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this)
