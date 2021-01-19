@@ -38,7 +38,7 @@
 4. [apply MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 5. [call MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 6. [call、apply、bind 区别](https://juejin.cn/post/6844903567967387656#comment)
-
+7. [剩余参数 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Rest_parameters)
 ## Example
 ```js
     const a = after(2,()=>{console.log(1)})
