@@ -8,9 +8,9 @@
 
 ## Params
 `(func, [resolver])`
-> func 需要缓存结果的函数
+> {Function} func 需要缓存结果的函数
 > <br/>
-> resolver 获取缓存 key 的函数，可不传
+> {Function} resolver 获取缓存 key 的函数，可不传
 > 
 
 ## Return

@@ -4,9 +4,9 @@
 `after` 会返回一个函数，在调用这个函数 `n` 次后，会调用传入的 `func` 
 ## Params
 `(n, func)`
-> n 次数
+> {Number} n: 次数
 > 
-> func 回调的函数
+> {Function} func: 回调的函数
 > 
 
 ## Return

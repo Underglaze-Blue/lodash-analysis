@@ -4,9 +4,9 @@
 `lodash at` 的基本实现， `baseAt` 可以根据指定的一组属性路径 `paths`(`Array`)，从 `object` 中取出属性路径对应的一组值。
 ## Params
 `(object, paths)`
-> object: 源对象
+> {Object} object: 源对象
 >
-> paths: 路径数组
+> {string[]} paths: 路径数组
 >
 
 ## Return

@@ -5,9 +5,9 @@
 ## Params
 `(func, default)`
 
-> func 操作方法
+> {Function} func: 执行操作的函数。
 > 
-> default 默认返回值
+> {Number} default 默认返回值
 > 
 
 ## Return

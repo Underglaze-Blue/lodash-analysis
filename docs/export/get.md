@@ -4,16 +4,16 @@
 获取对象深层的值，主要是基于 `baseGet` 实现，不同在于 `get` 可以添加默认值
 ## Params
 `(object, path, defaultValue)`
-> object: 原对象
+> {Object} object: 原对象
 >
-> path: 属性路径 或 属性名
+> {Array|string} path: 属性路径 或 属性名
 >
-> defaultValue: 默认值
+> {*} defaultValue: 默认值
 >
 
 
 ## Return
-`value`
+`{*} value`
 > 返回获取到的值或者默认值
 
 

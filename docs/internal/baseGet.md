@@ -4,9 +4,9 @@
 `lodash get` 的基本实现，不支持默认值。
 ## Params
 `(object, path)`
-> object: 要获取的对象
+> {Object} object: 要获取的对象
 >
-> path: 要获取的属性的路径
+> {Array|string} path: 要获取的属性的路径
 >
 
 ## Return

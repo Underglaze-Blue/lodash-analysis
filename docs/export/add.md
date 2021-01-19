@@ -4,9 +4,9 @@
 加法操作，两个数相加
 ## Params
 `(augend, addend)`
-> augend 第一个数
+> {Number} augend 第一个数
 > 
-> addend 第二个数
+> {Number} addend 第二个数
 > 
 
 

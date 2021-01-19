@@ -7,7 +7,7 @@
 
 > value: 需要校验的值
 >
-> object： isKey 需要用到校验的对象
+> {Object} object： isKey 需要用到校验的对象
 >
 
 ## Return

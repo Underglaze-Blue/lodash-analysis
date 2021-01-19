@@ -4,10 +4,10 @@
 调用传入的 `func` ， 返回结果或者返回捕获到的错误
 
 ## Params
-`(func, args)`
-> func: function
+`(func, ...args)`
+> {Function} func: function
 > 
-> args: func 调用的参数
+> {...*} [args]: func 调用的参数
 
 ## Return
 `func` 的执行结果或者 `Error`

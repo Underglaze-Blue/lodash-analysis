@@ -4,7 +4,7 @@
 `memoizeCapped` 本质是调用 `memoize` ，不过会定制 `memoize` 的 `resolver` 函数，定制的主要作用是限制缓存的数量，避免缓存太大，占用太多的内存。
 
 ## Params
-`func`
+`{Function} func`
 
 ## Return
 `Function`
