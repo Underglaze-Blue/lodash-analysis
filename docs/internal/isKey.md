@@ -15,7 +15,9 @@
 ```js
     import isSymbol from '../isSymbol.js'
 ```
-[isSymbol 源码分析](../export/isSymbol.md)
+> [isSymbol 源码分析](../export/isSymbol.md)
+>
+
 
 ## Code
 ```js
@@ -48,7 +50,7 @@ function isKey(value, object) {
 
 #### 源码分析
 1. 首先判断 `value` 如果是 `Array` ，直接 `return false`
-2. 其次判断 `value` 的类型是否为 `Number`、`Boolean`、 `Null`, `Symbol`,除 `Symbol` 外，在做 `Object` 的 `Key` 值时，都会默认转换为 `String` ，而在 `ES6` 中，本身就可以做 `Object` 的 `Key` 值
+2. 其次判断 `value` 的类型是否为 `Number`、`Boolean`、 `Null`, `Symbol`,除 `Symbol` 外，在做 `Object` 的 `Key` 值时，都会默认转换为 `String` ，而在 `ES6` 中，`Symbol` 本身就可以做 `Object` 的 `Key` 值 （[Symbol术语 MDN ](https://developer.mozilla.org/zh-CN/docs/Glossary/Symbol)）
 3. 开始处理字符串类型， 如果是 `\w` 类型则直接返回 `true` ，接着判断如果 不是 `.` `[]` （如：`a.b.c` `a['b'].c`） 这种类型的情况下，返回 `true`
 4. 特殊情况处理，如果非要 传入 `a.b.c` 这种形式的情况，就需要用到 第二个参数 `object` 来判断，如果传入的对象不为空，并且 `value` 是 `object` 的 `Key` 则返回 `true`
 
