@@ -114,9 +114,11 @@ return result
 4. 返回最终结果数组
 ## Remark
 1. [Array 描述 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array#%E6%8F%8F%E8%BF%B0)
-2. [JavaScript: sparse arrays vs. dense arrays](https://2ality.com/2012/06/dense-arrays.html)
-3. [无符号右移赋值预算 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift_assignment)
-4. 对于 稀疏数组 和 稠密数组
+2. [Array.prototype.slice MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+3. [JavaScript: sparse arrays vs. dense arrays](https://2ality.com/2012/06/dense-arrays.html)
+4. [无符号右移赋值预算 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators
+/Unsigned_right_shift_assignment)
+5. 对于 稀疏数组 和 稠密数组
 ```js
 var a = new Array(3);
 // a 在遍历时，并不会打印任何值，此时为稀疏数组
