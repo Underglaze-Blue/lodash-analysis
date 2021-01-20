@@ -11,6 +11,7 @@
     "deploy": "sh build.sh"
   },
   "devDependencies": {
+    "@vuepress/plugin-medium-zoom": "^1.8.0",
     "vuepress": "^1.8.0"
   }
 }

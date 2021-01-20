@@ -56,7 +56,7 @@ function baseAt(object, paths) {
 <br/>
 <br/>
 
-<img style="zoom:2" :src="$withBase('/assets/baseAt_1.png')" />
+<img  :src="$withBase('/assets/baseAt_1.png')" />
 
 5. 参考回答 [Is there a performance difference between i++ and ++i in JavaScript?](https://stackoverflow.com/questions/12504765/is-there-a-performance-difference-between-i-and-i-in-javascript)
 6. 参考回答 [Is there a performance difference between i++ and ++i in C?](https://stackoverflow.com/questions/24886/is-there-a-performance-difference-between-i-and-i-in-c)

@@ -40,13 +40,13 @@ function isKey(value, object) {
 ####
 1. `reIsDeepProp`， 用于匹配属性路径中的属性名称。
 `/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/` 图解如下
-<img style="zoom:2" :src="$withBase('/assets/reg_isKey_1.svg')" />
+<img  :src="$withBase('/assets/reg_isKey_1.svg')" />
 
 在 `lodash` 中，像 `a.b.c` 和 `a[0].b.c` 这种可能会被当作属性路径对待，像 `get` 这些的函数支持传入这样的路径来获取嵌套对象的值，在这个正则中，主要就是匹配 `.` `[]`这种属性值，同时支持转义字符，如 `[\'b\']`
 
 2. `reIsPlainProp`, 用于匹配`[0-9A-Za-z_]`
 `/^\w*$/`， 图解如下
-<img style="zoom:2" :src="$withBase('/assets/reg_isKey_2.svg')" />
+<img  :src="$withBase('/assets/reg_isKey_2.svg')" />
 
 #### 源码分析
 1. 首先判断 `value` 如果是 `Array` ，直接 `return false`
