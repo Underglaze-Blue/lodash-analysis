@@ -39,7 +39,7 @@ function baseAt(object, paths) {
 ## Analyze
 1. 定义 `index` 为 `-1`， 获取到 `paths` 的 `length`， 定义 `result` 数组， 判断 `object` 是否为 `null`
 2. 使用 `while` 循环遍历获取 `object` 的值，并 `push` 到 `result` 中
-3. 如果 object 为 null ，则值为 `undefined` ， 否则使用 `get` 方法，获取对应下标的 `path` 对应的值
+3. 如果 `object` 为 `null` ，则值为 `undefined` ， 否则使用 `get` 方法，获取对应下标的 `path` 对应的值
 
 ## Remark
 1. [自增(++) MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Increment)
