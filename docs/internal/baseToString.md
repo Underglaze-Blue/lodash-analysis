@@ -51,6 +51,10 @@
 ## Remark
 1. 主要是根据参数类型进行了不同的处理，并且最终转换字符串返回
 2. [toString MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toString)
+3. 其他类型的 `toString MDN` 参考 [toString 源码分析](../export/toString.md) **Remark**
+4. [模板字面量(模板字符串) MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings)
+5. [Number.NEGATIVE_INFINITY MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY)
+6. [Number.POSITIVE_INFINITY MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY)
 
 ## Example
 ```js

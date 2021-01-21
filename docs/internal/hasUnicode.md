@@ -68,6 +68,7 @@ function hasUnicode(string) {
 <br/>
 <br/>
 10. [Unicode 查询](https://unicode-table.com/cn/blocks/)
+10. [Unicode 查询](https://util.unicode.org/UnicodeJsps/character.jsp)
 11. [Unicode](https://home.unicode.org/)
 
 ## Example

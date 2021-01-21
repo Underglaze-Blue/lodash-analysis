@@ -83,7 +83,8 @@ function unicodeWords(string) {
 
 
 ## Remark
-1. 1. [match MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+1. [match MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+2. 关于 `Unicode` 相关可以参考 [hasUnicode 源码分析](./hasUnicode.md)
 ## Example
 ```js
 unicodeWords('微信 wechat 微笑🙂') // [ '微信', 'wechat', '微笑', '🙂' ]

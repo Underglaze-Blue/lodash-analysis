@@ -37,6 +37,11 @@ function toKey(value) {
 ## Remark
 1. [Number.prototype.toString() MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)
 2. [Number.prototype.toString ECMAScript 2015](https://262.ecma-international.org/6.0/#sec-number.prototype.tostring)
+3. 其他类型的 `toString MDN` 参考 [toString 源码分析](../export/toString.md) **Remark**
+4. [模板字面量(模板字符串) MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings)
+5. [Number.NEGATIVE_INFINITY MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY)
+6. [Number.POSITIVE_INFINITY MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY)
+
 
 ## Example
 ```js
