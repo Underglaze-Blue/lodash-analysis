@@ -31,11 +31,11 @@ const camelCase = (string) => (
 )
 ```
 ## Analyze
-1. `/['\u2019]/g`，全局替换 `,` 为空
+1. `/['\u2019]/g`
 
 <img  :src="$withBase('/assets/reg_camelCase_1.svg')" />
 
-2. 调用 `toString` 讲传入的值转换为 字符串，并且替换掉 `,`
+2. 调用 `toString` 将传入的值转换为 字符串，并且替换掉 `'` 和 `U+2019`
 3. 使用 `words` 进行词分割，得到分割好的数组
 4. 使用 `reduce` 进行拼接，最终返回一个字符串
 5. 对于 迭代中的每个 `word` 都进行了转小写处理
