@@ -116,8 +116,7 @@ return result
 1. [Array 描述 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array#%E6%8F%8F%E8%BF%B0)
 2. [Array.prototype.slice MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 3. [JavaScript: sparse arrays vs. dense arrays](https://2ality.com/2012/06/dense-arrays.html)
-4. [无符号右移赋值预算 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators
-/Unsigned_right_shift_assignment)
+4. [无符号右移赋值预算 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift_assignment)
 5. 对于 稀疏数组 和 稠密数组
 ```js
 var a = new Array(3);
@@ -128,6 +127,149 @@ var b = new Array(3).fill(undefined)
 b.forEach(function (x, i) { console.log(i+". "+x) }) // 0. undefined ; 1. undefined; 2. undefined;
 ```
 区别在于遍历时，稀疏数组会跳过不存在的元素，但是稠密数组可以打印出来，虽然都为 `undefined`
+
+6. [对象和属性 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Working_with_Objects#%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%B1%9E%E6%80%A7)
+
+
+#### 假设传入 Array-Like
+
+JavaScript 会按以下规则对字符串，数字，布尔或对象类型的操作数进行操作:
+
+- 当比较数字和字符串时，字符串会转换成数字值。 JavaScript 尝试将数字字面量转换为数字类型的值。 首先，一个数学上的值会从数字字面量中衍生出来，然后这个值将被转为一个最接近的 Number 类型的值。
+ 
+- 如果其中一个操作数为布尔类型，那么布尔操作数如果为 true，那么会转换为 1，如果为 false，会转换为整数 0，即 0。
+
+- 如果一个对象与数字或字符串相比较，JavaScript 会尝试返回对象的默认值。操作符会尝试通过方法 valueOf 和 toString 将对象转换为其原始值（一个字符串或数字类型的值）。如果尝试转换失败，会产生一个运行时错误。
+
+- 注意：当且仅当与原始值比较时，对象会被转换为原始值。当两个操作数均为对象时，它们作为对象进行比较，仅当它们引用相同对象时返回 true。
+
+[Abstract Equality Comparison Algorithm](https://262.ecma-international.org/5.1/#sec-11.9.3)
+
+<img  :src="$withBase('/assets/AbstractEqualityComparisonAlgorithm.png')" />
+
+明确以上规则后，我们来看看如果传入 `Array-Like` ， `slice` 会怎么处理
+
+1. 首先我们先定义一个 Array-Like
+```js
+const a = {
+  0: 'zero',
+  1: 'one',
+  2: 'two',
+  3: 'three',
+  4: 'four',
+  length: 5
+}
+```
+
+2. 传入 `slice` 中
+
+这里会获取 array.length，不存在 length 就返回空数组
+```js
+let length = array == null ? 0 : array.length
+if (!length) {
+    return []
+}
+```
+
+紧接着获取 start 和 end， 在这里如果我们不传入的话 start 默认为 0， 而end 则默认为 length 的值
+```js
+  start = start == null ? 0 : start
+  end = end === undefined ? length : end
+```
+
+如果我们传入的 Array-Like 的 `length` 不为数字，如果 `length` 我们设置为 `'length'` 字符串
+
+```js
+/** 
+* end > length 就变成了 'length' > 'length' ，这个结果为 false 
+* 可参考上述图片 1.d, 那么 end 值不变，依旧是 'length'
+*/
+end = end > length ? length : end
+
+/**
+* end < 0 , 就变成了 'length' < 0 的判断
+* 在这里会将 'length' 转为 number 进行比较,
+* 也就是 NaN, NaN < 0 是 false
+*/
+if (end < 0) {
+    end += length
+}
+/**
+* 这里 start > end , 同理 为 false。
+* 执行 (end - start) >>> 0, 也就是 NaN >>> 0, 结果为 0
+*/
+length = start > end ? 0 : ((end - start) >>> 0)
+
+let index = -1
+const result = new Array(length)
+/**
+* ++index < length , length 为 0， 
+* 那么 ++index < length 就为 false ，
+* 此时直接返回 result ，为 []
+*/
+return result
+
+```
+
+如果我们传入的 `length` 大于或者小于 元素的个数， 并且传入的 `start` 和 `end` 不为数字的话
+```js
+/**
+* 首先虽然传入的 start 和 end 不为数字，
+* 但是前几步依旧可以走过，我们看后续的逻辑
+*/
+
+/**
+* 如果我们传入的 start 不为数字(字符串数字会进行转换)，
+* 进行比较时， start < 0 为 false
+* 如果我们传入 负数，在这里 
+*    1. 如果length 为数字， 则有可能 大于length 或者小于 length 
+            这里逻辑和正常处理一致
+*    2. 如果 length 不为 数字。会执行 start = length + start
+*/
+if (start < 0) {
+    start = -start > length ? 0 : (length + start)
+}
+
+/**
+* end 逻辑和上述一样，可参考上面代码
+* start 如果不为数字时，就有可能为 NaN，右移后就为 0
+*/
+end = end > length ? length : end
+if (end < 0) {
+    end += length
+}
+length = start > end ? 0 : ((end - start) >>> 0)
+start >>>= 0
+
+/**
+* 如果 length 小于 元素个数
+* e.g a = {0:0, 1:1, length:1}
+*
+* 新建的 result 数组的 长度就为 1，只会 push 进去一个元素
+*
+* 如果 length 大于 元素个数
+* e.g a = {0:0, 1:1, length:5}
+* result 在赋值时，会取 a[3] ,会得到 undefined
+* 对象中未赋值的属性值为undefined
+*
+* 最终 result = [0,1,undefined,undefined,undefined]
+*
+* 同理，不连续的 key 也是如此
+* e.g a = {0:0, 2:2, length: 3}
+* result = [0,undefined,2]
+*
+* e.g a = {0:0, 2:2, length: 2}
+* result = [0, undefined]
+*/
+let index = -1
+const result = new Array(length)
+while (++index < length) {
+    result[index] = array[index + start]
+}
+return result
+```
+
+
 ## Example
 ```js
 // 对比 Array#slice
