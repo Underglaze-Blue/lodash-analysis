@@ -17,12 +17,12 @@ JavaScript 中的全等（===）遵循这个规范，：
 
 1. 如果 x 和 y 的类型不同，返回 false
 2. 如果 x 的为 Number 类型：
-    a. 如果 x 为 NaN ，返回 false
-    b. 如果 y 为 NaN ，返回 false
-    c. 如果 x 和 y 的数值一致，返回 true
-    d. 如果 x 为 +0 并且 y 为 -0 ，返回 true
-    e. 如果 x 为 -0 并且 y 为 +0 ，返回 true
-    f. 返回 false
+    - 如果 x 为 NaN ，返回 false
+    - 如果 y 为 NaN ，返回 false
+    - 如果 x 和 y 的数值一致，返回 true
+    - 如果 x 为 +0 并且 y 为 -0 ，返回 true
+    - 如果 x 为 -0 并且 y 为 +0 ，返回 true
+    - 返回 false
 3. 按照 SameValueNonNumber 的结果返回
 
 ## [SameValue](https://262.ecma-international.org/7.0/#sec-samevalue)
@@ -30,21 +30,21 @@ JavaScript 中的全等（===）遵循这个规范，：
 
 1. 如果 x 和 y 的类型不同，返回 false
 2. 如果 x 的类型为 Number
-    a. 如果 x 为 NaN 并且 y 为 NaN ，返回 true
-    b. 如果 x 为 +0 并且 y 为 -0 ，返回 false
-    c. 如果 x 为 -0 并且 y 为 +0 ， 返回 false
-    d. 如果 x 和 y 的数值一致，返回 true
-    e. 返回 false
+    - 如果 x 为 NaN 并且 y 为 NaN ，返回 true
+    - 如果 x 为 +0 并且 y 为 -0 ，返回 false
+    - 如果 x 为 -0 并且 y 为 +0 ， 返回 false
+    - 如果 x 和 y 的数值一致，返回 true
+    - 返回 false
 3. 按照 SameValueNonNumber 的结果返回
 
 ## [SameValueZero](https://262.ecma-international.org/7.0/#sec-samevaluezero)
 1. 如果 x 和 y 的类型不同，返回 false
 2. 如果 x 的类型为 Number
-    a. 如果 x 为 NaN 并且 y 为 NaN ，返回 true
-    b. 如果 x 为 +0 并且 y 为 -0 ，返回 true
-    c. 如果 x 为 -0 并且 y 为 +0 ， 返回 true
-    d. 如果 x 和 y 的数值一致，返回 true
-    e. 返回 false
+    - 如果 x 为 NaN 并且 y 为 NaN ，返回 true
+    - 如果 x 为 +0 并且 y 为 -0 ，返回 true
+    - 如果 x 为 -0 并且 y 为 +0 ， 返回 true
+    - 如果 x 和 y 的数值一致，返回 true
+    - 返回 false
 3. 按照 SameValueNonNumber 的结果返回
 > SameValueZero 与 SameValue 的区别仅在于它对 + 0 和 - 0 的处理
 
