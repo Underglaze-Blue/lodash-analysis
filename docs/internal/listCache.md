@@ -116,7 +116,7 @@ class ListCache {
 
 ```
 ## Analyze
-<img  :src="$withBase('/assets/ListCache.svg')" />
+<img  :src="$withBase('/assets/ListCache.png')" />
 
 `ListCache` 作为一个缓存 键值对的类 ，其数据结构如图所示， 返回的数据结构为
 ```js

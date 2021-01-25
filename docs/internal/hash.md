@@ -100,7 +100,7 @@ class Hash {
 }
 ```
 ## Analyze
-<img  :src="$withBase('/assets/Hash.svg')" />
+<img  :src="$withBase('/assets/Hash.png')" />
 
 `Hash` 作为一个缓存 键值对的类 ，其数据结构如图所示， 返回的数据结构为
 ```js
