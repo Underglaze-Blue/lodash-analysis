@@ -10,7 +10,9 @@
 
 ### [mozilla](https://developer.mozilla.org/zh-CN/)
 
-### [ECMA-262](https://262.ecma-international.org/7.0)<a download target="_blank" :href="$withBase('/assets/ECMA-262.pdf')">ECMA 262 PDF</a>
+### [ECMA-262](https://262.ecma-international.org/7.0) 
+
+<a download target="_blank" :href="$withBase('/assets/ECMA-262.pdf')">ECMA 262 PDF</a>
 
 
 ### Lodash介绍
