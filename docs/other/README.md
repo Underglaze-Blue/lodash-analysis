@@ -7,6 +7,8 @@
  4. <a download target="_blank" :href="$withBase('/assets/JavaScript正则表达式迷你书（1.1版）.pdf')">JavaScript正则表达式mini 1.1</a>
  5. <a download target="_blank" :href="$withBase('/assets/ECMA-262.pdf')">ECMA 262</a>
  
+ 6. [逻辑空赋值 (??=)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_nullish_assignment)
+ 
  ## == 和 ===
  
  `===`
