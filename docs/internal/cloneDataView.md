@@ -21,10 +21,10 @@ function cloneDataView(dataView, isDeep) {
 }
 ```
 ## Analyze
-1. DataView.prototype.constructor 指定用来生成原型的构造函数。初始化值是标准内置 DataView 构造器.
-2. DataView.prototype.byteOffset  从 ArrayBuffer读取时的偏移字节长度。创建实例的时候已固化因此是只读的.
-3. DataView.prototype.byteLength  从 ArrayBuffer中读取的字节长度。创建实例的时候已固化因此是只读的
-4. DataView.prototype.buffer  被视图引入的 ArrayBuffer. 创建实例的时候已固化因此是只读的.
+1. `DataView.prototype.constructor` 指定用来生成原型的构造函数。初始化值是标准内置 DataView 构造器.
+2. `DataView.prototype.byteOffset`  从 ArrayBuffer读取时的偏移字节长度。创建实例的时候已固化因此是只读的.
+3. `DataView.prototype.byteLength`  从 ArrayBuffer中读取的字节长度。创建实例的时候已固化因此是只读的
+4. `DataView.prototype.buffer`  被视图引入的 ArrayBuffer. 创建实例的时候已固化因此是只读的.
 5. 如果传入了 isDeep 则使用 cloneArrayBuffer 重新开辟内存空间，返回新的 buffer，否则的话使用 dataView.buffer
 6. new 一个 新的 dataView ， 偏移量和字节长度跟传入的 dataView 保持一致
 
