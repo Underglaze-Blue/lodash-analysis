@@ -38,11 +38,13 @@ const a = {a: 1}
 
 ;[1,2,3,4,5].forEach(k => {
   Object.defineProperty(a, Symbol(k), {
-    'configurable': true,
     'enumerable': true,
     'value': k,
-    'writable': true
   })
+})
+
+Object.defineProperty(a, Symbol(6), {
+  'value': 6,
 })
 
 console.log(getSymbols(a)) // [ Symbol(1), Symbol(2), Symbol(3), Symbol(4), Symbol(5) ]
