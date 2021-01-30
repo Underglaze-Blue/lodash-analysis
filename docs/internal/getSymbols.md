@@ -1,7 +1,7 @@
 # getSymbols 
 
 ## Description 
-创建一个自己的 `object` 的可枚举 `symbol` 数组
+拿到 `object` 的可枚举 `symbol` 数组
 ## Params
 `object`
 ## Return
