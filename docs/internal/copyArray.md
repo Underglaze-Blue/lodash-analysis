@@ -1,7 +1,7 @@
 # copyArray 
 
 ## Description 
-将 `source`  的值复制到  `array`
+将 `source`  的值复制到  `array`，这里直接进行了赋值操作，并没有处理引用类型的情况，所以如果为引用类型则为浅拷贝
 ## Params
 `(source, array)`
 ## Return
