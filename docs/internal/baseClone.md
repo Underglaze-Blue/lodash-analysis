@@ -4,7 +4,7 @@
  clone 和 cloneDeep 的基本实现，用于跟踪已遍历的对象。
 ## Params
 `(value, bitmask, customizer, key, object, stack)`
-> value 要克隆的值
+> value 要拷贝的值
 >
 > bitmask： 1 深拷贝  2 是否拷贝原型链上的属性 4 是否拷贝 symbol
 >
@@ -336,7 +336,7 @@ isFull = 0100 & 0100 // 4;
 使用二进制标识符，可以做到一个参数实现不同效果，达到了节省参数的目的
 
 ### customizer
-如果 传入了 customizer 自定义拷贝函数，那么复制逻辑就放到了 customizer 中去处理，如果最终结果不为 undefined，baseClone 将不再处理拷贝逻辑
+如果 传入了 customizer 自定义拷贝函数，那么拷贝逻辑就放到了 customizer 中去处理，如果最终结果不为 undefined，baseClone 将不再处理拷贝逻辑
 ```js
 let result
 if (customizer) {
@@ -415,7 +415,7 @@ if (isArr) {
 ```
 如果传入的 `value` 为 `Buffer` 类型，则直接使用 `cloneBuffer` 返回结果，这里将 isDeep 传入了， `cloneBuffer` 会根据这个来进行处理，但是这里有一点问题，详情查看 [cloneBuffer](./cloneBuffer.md)
 
-### 是否可以复制 Tag
+### 是否可以拷贝 Tag
 ```js
 /** `Object#toString` result references. */
 const argsTag = '[object Arguments]'
@@ -460,7 +460,7 @@ cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true
 
 cloneableTags[errorTag] = cloneableTags[weakMapTag] = false
 ```
-这里将 Error 和 WeakMap 标记为了不可复制，不在可复制列表中的其他对象，也不可复制
+这里将 Error 和 WeakMap 标记为了不可拷贝，不在可拷贝列表中的其他对象，也不可拷贝
 
 ### Object、Arguments、Function 浅拷贝
 
@@ -500,7 +500,7 @@ result = (isFlat || isFunc) ? {} : initCloneObject(value)
 copySymbolsIn(value, copyObject(value, keysIn(value), result))
 ```
 
-首先调用 `keysIn(value)` 将`value`及`value`原型链上所有非 `Symbol` 的可枚举属性收集，然后调用 `copyObject` 将非 `Symbol` 属性值复制到 `result` 中，再调用 `copySymbolsIn` 将自身及原型链上 `Symbol` 类型的可枚举属性值也复制到 `result` 中
+首先调用 `keysIn(value)` 将`value`及`value`原型链上所有非 `Symbol` 的可枚举属性收集，然后调用 `copyObject` 将非 `Symbol` 属性值拷贝到 `result` 中，再调用 `copySymbolsIn` 将自身及原型链上 `Symbol` 类型的可枚举属性值也拷贝到 `result` 中
 
 如果不需要考虑原型链
 
@@ -508,7 +508,7 @@ copySymbolsIn(value, copyObject(value, keysIn(value), result))
 copySymbols(value, Object.assign(result, value))
 ```
 
-使用 `Object.assign` 复制自身可枚举属性值到 `result` 中(除 `symbol`)，再调用 `copySymbols` 将 `value` 可枚举的 `Symbol` 属性值复制到 `result` 中即可
+使用 `Object.assign` 拷贝自身可枚举属性值到 `result` 中(除 `symbol`)，再调用 `copySymbols` 将 `value` 可枚举的 `Symbol` 属性值拷贝到 `result` 中即可
 
 ### initCloneByTag
 ```js
@@ -569,7 +569,7 @@ function initCloneByTag(object, tag, isDeep) {
 9. symbolTag
     - 直接调用 cloneSymbol 将返回结果 赋值给 result
 
-### 不可复制类型
+### 不可拷贝类型
 ```js
 const tag = getTag(value)
 
@@ -589,7 +589,7 @@ if (isArr) {
 }
 ```
 
-如果传入的 `value` 为 `Function` ，或者 `value` 的 `tag` 为 不可复制类型，会判断有没有传入 `object`，如果传入了 `object`，那么就返回 `value` 本身，否则返回一个空对象
+如果传入的 `value` 为 `Function` ，或者 `value` 的 `tag` 为 不可拷贝类型，会判断有没有传入 `object`，如果传入了 `object`，那么就返回 `value` 本身，否则返回一个空对象
 
 对于其他 `tag` 类型，会调用 `initCloneByTag` 做初始化处理
 
@@ -677,7 +677,7 @@ arrayEach(props || value, (subValue, key) => {
 
 如果 `props` 存在，则表示当前遍历的不是数组，而是对象，则将 subValue 赋值给 key ，再从 value 中将 key 的值取出，重新赋值给 subValue ，这样遍历时 数组 和 对象 所对应 subValue 和 key 的意义就相同了
 
-递归调用 `baseClone` 对 `subValue` 进行拷贝，然后调用 `assignValue` 将复制后的值赋值给结果 `result` 对应的 `key` 上，这样就实现了数组和对象的深拷贝
+递归调用 `baseClone` 对 `subValue` 进行拷贝，然后调用 `assignValue` 将拷贝后的值赋值给结果 `result` 对应的 `key` 上，这样就实现了数组和对象的深拷贝
 
 ## Remark
 1. 从头分析会发现 lodash 巧妙的使用了 位标识符 来减少了参数的数量，使用 & 运算可以达到目的
@@ -686,6 +686,7 @@ arrayEach(props || value, (subValue, key) => {
 4. 使用 initCloneByTag 对于很多相同的处理逻辑做了一个 result 的初始化
 5. 对于 Map 和 Set 都是循环递归的处理了值
 6. 最后统一对数组和对象进行了深拷贝的处理
+7. [结构化克隆算法 MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/DOM/The_structured_clone_algorithm)
 ## Example
 ```js
 const b = {
