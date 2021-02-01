@@ -63,7 +63,7 @@ function arrayLikeKeys(value, inherited) {
 2. 如果 `skipIndexes` 标识符为真，则 `result` 数组的长度就为 `value.length` ，否则长度为 `0`
 3. 对于 `index` 的处理也是如此，如果 `skipIndexes` 标识符为真，则为 `-1`， 否则等同于 `length`
 4. 使用 `while` 循环遍历，这里如果 `index == length` ，因为是 `++index`， 所以不会进入 `while` 循环，否则就给数组每一项设置为字符串类型 `index`，使用 `while` 是为了遍历 **稀疏数组**
-5. 使用 for in 来遍历
+5. 使用 for in 来遍历 value 自身和原型链上的属性
     - (inherited || hasOwnProperty.call(value, key)) 
         - 本来只遍历 `value` 存在的属性（`hasOwnProperty.call(value, key)`），但是因为有标识符 `inherited` 的关系，如果传入了 `true` 对于原型链上的可枚举属性也会遍历
     - !(skipIndexes && ((key === 'length' || isIndex(key, length))))
@@ -85,16 +85,20 @@ const a = {
 
 const b = [1,2,3,3,4,5,6,7]
 const c = new Uint8Array(10)
-const d = {
-  a: 1,
-  b: 2,
-  c: 3,
-  d: 4
-}
+
+function Test(){}
+Test.prototype.name = 'Test'
+Test.prototype.type = 'Function'
+
+const d = new Test
+d['a'] = 1
+d['b'] = 2
+d['c'] = 3
+d['d'] = 4
 
 console.log(arrayLikeKeys(a)) // [ '0', '1', '2', '3', 'length' ]
 console.log(arrayLikeKeys(b)) // ['0', '1', '2', '3', '4', '5', '6', '7' ]
 console.log(arrayLikeKeys(c)) // ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ]
 console.log(arrayLikeKeys(d)) // [ 'a', 'b', 'c', 'd' ]
-
+console.log(arrayLikeKeys(d, true)) // [ 'a', 'b', 'c', 'd', 'name', 'type' ]
 ```
