@@ -1,7 +1,7 @@
 # baseClone 
 
 ## Description 
- clone 和 cloneDeep 的基本实现，用于跟踪已遍历的对象。
+ clone 和 cloneDeep 的基本实现，会处理循环引用的问题。
 ## Params
 `(value, bitmask, customizer, key, object, stack)`
 > value 要拷贝的值
