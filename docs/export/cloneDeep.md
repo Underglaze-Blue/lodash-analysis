@@ -1,7 +1,7 @@
 # cloneDeep 
 
 ## Description 
-这个方法类似 clone，除了它会递归拷贝 value。（注：也叫深拷贝）
+这个方法类似 [clone](./clone.md) ，除了它会递归拷贝 value。（注：也叫深拷贝）
 ## Params
 `value`
 ## Return
