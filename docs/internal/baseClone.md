@@ -686,7 +686,7 @@ arrayEach(props || value, (subValue, key) => {
 4. 使用 initCloneByTag 对于很多相同的处理逻辑做了一个 result 的初始化
 5. 对于 Map 和 Set 都是循环递归的处理了值
 6. 最后统一对数组和对象进行了深拷贝的处理
-7. [结构化克隆算法 MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/DOM/The_structured_clone_algorithm)
+7. 拷贝是借鉴了 [结构化克隆算法 MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/DOM/The_structured_clone_algorithm)
 ## Example
 ```js
 const b = {
