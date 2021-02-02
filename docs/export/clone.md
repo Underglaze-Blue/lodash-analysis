@@ -23,7 +23,7 @@ function clone(value) {
 }
 ```
 ## Analyze
-调用 `baseClone` 进行拷贝，并返回结果，这里传入的 `bitmask` 为 4， 表示会克隆 `symbol`
+调用 `baseClone` 进行拷贝，并返回结果，这里传入的 `bitmask` 为 4， 表示会拷贝 `symbol`
 ## Remark
 1. [结构化克隆算法 MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/DOM/The_structured_clone_algorithm)
 ## Example
