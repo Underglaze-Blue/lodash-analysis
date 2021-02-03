@@ -1,7 +1,7 @@
 # baseFor 
 
 ## Description 
-baseForOwn的基本实现，它迭代由 keysFunc 返回的 object 属性，并为每个属性调用 iteratee 。
+[baseForOwn](./baseForOwn.md) 的基本实现，它迭代由 keysFunc 返回的 object 属性，并为每个属性调用 iteratee 。
 
 Iteratee 如果返回 false 则会结束迭代
 ## Params
