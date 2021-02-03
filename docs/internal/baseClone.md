@@ -1,7 +1,7 @@
 # baseClone 
 
 ## Description 
- clone 和 cloneDeep 的基本实现，会处理循环引用的问题。
+ [clone](../export/clone.md) 和 [cloneDeep](../export/cloneDeep.md) 的基本实现，会处理循环引用的问题。
 ## Params
 `(value, bitmask, customizer, key, object, stack)`
 > value 要拷贝的值

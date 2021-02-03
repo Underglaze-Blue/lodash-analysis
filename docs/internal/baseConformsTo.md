@@ -1,7 +1,7 @@
 # baseConformsTo 
 
 ## Description 
-`conformto` 的基本实现，接受 `props` 检查。
+[`conformsto`](../export/conformsTo.md) 的基本实现，接受 `props` 检查。
 
 > 会对 object 的 指定 props 属性做检查，检查函数由source提供
 
