@@ -40,8 +40,8 @@ b.forEach(function (x, i) { console.log(i+". "+x) }) // 0. undefined ; 1. undefi
 ```
 区别在于遍历时，稀疏数组会跳过不存在的元素，但是稠密数组可以打印出来，虽然都为 `undefined`
 
-2. [every MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
-3. [forEach MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+2. [Array.prototype.every MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+3. [Array.prototype.forEach MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 ## Example
 ```js
 const arr = [1,2,3,4,5]
