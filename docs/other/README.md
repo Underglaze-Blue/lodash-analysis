@@ -10,7 +10,8 @@
  6. [逻辑空赋值 (??=)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_nullish_assignment)
  7. [现代 JavaScript 教程](https://zh.javascript.info/)
  8. [结构化克隆算法 MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/DOM/The_structured_clone_algorithm)
- 
+ 9. [Truthy（真值）MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy)
+ 10. [Falsy（虚值）MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/Falsy)
  ## == 和 ===
  
  `===`
