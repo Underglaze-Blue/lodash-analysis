@@ -57,8 +57,8 @@ function baseEach(collection, iteratee) {
 ```js
 const a = {a: 1, b: 2, c: 3}
 const b = [1,2,3]
-let c;
-let d = c = 0
+let c = 0;
+let d = c;
 
 baseEach(a, (val) => {c+=val})
 baseEach(b, (val) => {d+=val})
