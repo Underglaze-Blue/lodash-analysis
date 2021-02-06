@@ -27,11 +27,11 @@ function some(array, predicate) {
 }
 ```
 ## Analyze
-1. 根据是否传入了 array 给 length 赋值为 0 或者 array.length
-2. while 循环遍历，结束条件 index < length
-3. 调用 predicate 函数进行判断，参数为 当前值，当前索引，完成 array 数组
-4. 如果 predicate 返回为 truthy ，则返回 true ，结束 while 循环
-5. 如果 整个 while 循环完成后都没有 truthy， 返回 false
+1. 根据是否传入了 `array` 给 `length` 赋值为 0 或者 `array.length`
+2. `while` 循环遍历，结束条件 `index < length`
+3. 调用 `predicate` 函数进行判断，参数为 当前值，当前索引，完成 `array` 数组
+4. 如果 `predicate` 返回为 `truthy` ，则返回 `true` ，结束 `while` 循环
+5. 如果 整个 `while` 循环完成后都没有 `truthy`， 返回 `false`
 ## Remark
 1. [Array.prototype.some() MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some) 方法测试数组中是不是至少有 1 个元素通过了被提供的函数测试。它返回的是一个 Boolean 类型的值。
 ## Example

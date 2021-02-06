@@ -606,6 +606,11 @@ stack.set(value, result)
 
 在深度拷贝中，很容易出现 循环引用的情况
 
+```js
+const a = [1]
+a.push(a)
+```
+
 解决思路为 使用 `value` 作为 `key` 值， `result` 结果 作为 `value` 值，存到 `Stack` 中，每次递归会判断 如果 `Stack.get` 能拿到值，则说明之前已经进行过赋值了，直接将 `result` 返回即可，否则的话 使用 `Stack.set` 进行值的绑定，将 `result` 存到 `Stack` 中
 
 ### [Map 类型](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)

@@ -48,7 +48,8 @@ JavaScript 中的全等（===）遵循这个规范，：
 3. 按照 SameValueNonNumber 的结果返回
 > SameValueZero 与 SameValue 的区别仅在于它对 + 0 和 - 0 的处理
 
-## [Abstract Equality Comparison](https://262.ecma-international.org/7.0/#sec-abstract-equality-comparison)
+## [Abstract Equality Comparison](https://262.ecma-international.org/7.0/#sec-abstract-equality-comparison) 
+标准相等操作符 (== and !=)
 1. 如果 x 和 y 的类型相同，会返回 Strict Equality Comparison 的执行结果
 2. 如果 x 为 null ， y 为 undefined ，返回 true
 3. 如果 x 为 undefined， y 为 null ，返回 true
