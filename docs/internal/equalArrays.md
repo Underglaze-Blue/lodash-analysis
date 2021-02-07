@@ -203,7 +203,8 @@ if (!(
 返回 `result` 结果
 ## Remark
 1. [JS深拷贝](https://juejin.cn/post/6844903620190666759)
-2. 关于循环引用和相同引用的问题，简单点来说就是 
+2. [解决循环引用和相同引用的js深拷贝实现(BFS)](https://segmentfault.com/a/1190000021682472)
+3. 关于循环引用和相同引用的问题，简单点来说就是 
 ```js
 const a = [1]
 a.push(a)
