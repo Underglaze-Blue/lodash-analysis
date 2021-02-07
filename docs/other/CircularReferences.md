@@ -131,6 +131,12 @@ function cloneDeep (arr) {
 
 通过一个 Map 对象来缓存，在递归调用时，进行一个判断，如果 key 值已经重复了，直接返回对应的 value 即可
 
+如果有处理 数组或者对象等引用类型对比的函数 比如 [equalArrays](../internal/equalArrays.md) 时，也是这样的思路来进行循环引用的处理，可以使用 == 来进行对比
+
+== 会遵循 [Abstract Equality Comparison](https://262.ecma-international.org/7.0/#sec-abstract-equality-comparison) 判断逻辑，在类型相同时，会执行 [Strict Equality Comparison](https://262.ecma-international.org/7.0/#sec-strict-equality-comparison) 判断逻辑
+
+最终如果都是引用类型会走到 [SameValueNonNumber](https://262.ecma-international.org/7.0/#sec-samevaluenonnumber) 规范，该规范规定 **如果 x 和 y 指向同一个对象，返回 true， 否则返回 false**
+
 <img  :src="$withBase('/assets/circular_clone_deep.png')" />
 
 至此，就解决了循环引用和相同引用的问题
