@@ -1,25 +1,24 @@
-# defer 
+# delay 
 
 ## Description 
-推迟调用 func，直到当前堆栈清理完毕。 调用时，任何附加的参数会传给 func
+延迟 wait 毫秒后调用 func。 调用时，任何附加的参数会传给 func。
+
 ## Params
-`(func, ...args)`
-## Return   
+`(func, wait, ...args)`
+## Return
 `number`
 
 ## Code
 ```js
-function defer(func, ...args) {
+function delay(func, wait, ...args) {
   if (typeof func !== 'function') {
     throw new TypeError('Expected a function')
   }
-  return setTimeout(func, 1, ...args)
+  return setTimeout(func, +wait || 0, ...args)
 }
 ```
 ## Analyze
-1. 判断 func 是否为 function，如果不是，则报出类型错误
-2. 如果 func 是一个 function，则调用 setTimeout 将其添加进任务队列，在主线程调用完成后，处理任务队列中的任务
-3. defer 会返回定时器编号
+和 [defer](./defer.md) 基本一致，只不过这里延迟时间改为传入，调用一元正号转为数字
 ## Remark
 1. [window.setTimeout MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout) 方法设置一个定时器，该定时器在定时器到期后执行一个函数或指定的一段代码。
 2. [并发模型与事件循环 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop)
@@ -27,8 +26,9 @@ function defer(func, ...args) {
 4. [Event loops](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop)
 ## Example
 ```js
+delay(() => {console.log('delay')}, 2)
 defer(() => {console.log('defer')})
-console.log('before')
-// before
+
 // defer
+// delay
 ```
