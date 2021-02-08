@@ -12,6 +12,10 @@
  8. [结构化克隆算法 MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/DOM/The_structured_clone_algorithm)
  9. [Truthy（真值）MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy)
  10. [Falsy（虚值）MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/Falsy)
+ 11. [微任务与 Javascript 运行时环境](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
+ 12. [并发模型与事件循环](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop)
+ 13. [Event loops](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
+ 14. [JavaScript 运行机制详解：再谈 Event Loop 阮一峰](https://www.ruanyifeng.com/blog/2014/10/event-loop.html)
  ## == 和 ===
  
  `===`
