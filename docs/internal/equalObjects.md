@@ -5,11 +5,11 @@ equalObjects 用来比较两个对象是否相等，会深度比较
 ## Params
 `(object, other, bitmask, customizer, equalFunc, stack)`
 
-> {object} array - 需要比较的对象
+> {object} object - 需要比较的对象
 >
 > {object} other - 另外一个需要比较的对象
 >
-> {number} bitmask - 标志位，可以用来控制 部分比较(1) 和 无序数组的比较(2)
+> {number} bitmask - 标志位，可以用来控制 部分比较(1)
 >
 > {Function} customizer - 自定义比较的函数。
 >
