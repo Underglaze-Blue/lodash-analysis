@@ -6,9 +6,9 @@ equalByTag 会根据 tag 类型的不同来比较 object 或者 array 是否相�
 此函数仅支持将值与Boolean，Date，Error，Number，RegExp或String的标签进行比较。
 ## Params
 `(object, other, tag, bitmask, customizer, equalFunc, stack)`
-> {Object} array - 需要比较的数组
+> {Object} array - 需要比较的对象
 >
-> {Object} other - 另外一个需要比较的数组
+> {Object} other - 另外一个需要比较的对象
 >
 > tag - Object.prototype.toString.call 的值
 >
