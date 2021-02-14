@@ -4,7 +4,7 @@
 检查 `value` 是否为有效的类数组索引
 ## Params
 `(value, length)`
-> length 有效地索引上限，一般就是数组的length
+> length - 有效地索引上限，一般就是数组的length
 >
 
 ## Return
