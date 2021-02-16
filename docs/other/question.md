@@ -37,4 +37,64 @@ console.log(c) // <Buffer 01 02 03 04 05>
 
 参考：[Buffer Node.js](http://nodejs.cn/api/buffer.html#buffer_buffer) ， [Buffer.slice](http://nodejs.cn/api/buffer.html#buffer_buf_slice_start_end)
 
+## [orderBy](../export/orderBy.md)
+```js
+function orderBy(collection, iteratees, orders) {
+  if (collection == null) {
+    return []
+  }
+  if (!Array.isArray(iteratees)) {
+    iteratees = iteratees == null ? [] : [iteratees]
+  }
+  if (!Array.isArray(orders)) {
+    orders = orders == null ? [] : [orders]
+  }
+  return baseOrderBy(collection, iteratees, orders)
+}
+```
 
+在 `orderBy` 的官方示例中
+```js
+var users = [
+  { 'user': 'fred',   'age': 48 },
+  { 'user': 'barney', 'age': 34 },
+  { 'user': 'fred',   'age': 40 },
+  { 'user': 'barney', 'age': 36 }
+];
+ 
+// 以 `user` 升序排序 再  `age` 以降序排序。
+orderBy(users, ['user', 'age'], ['asc', 'desc']);
+```
+
+如果 按照官方示例，调用 会报错 ，这里报错在 `baseOrderBy` 中
+```js
+TypeError: iteratee is not a function
+```
+
+这里是因为，在 `baseOrderBy` 中，`iteratee` 是一个函数形式，而且在一开始 处理 `iteratees` 时，如果 `iteratee` 不是数组，则会直接返回当前 `iteratee` ，并不会做任何处理
+
+```js
+const criteria = iteratees.map((iteratee) => iteratee(value))
+```
+所以导致，在这里，会报错
+
+修改如下
+```js
+var users = [
+  { 'user': 'fred',   'age': 48 },
+  { 'user': 'barney', 'age': 34 },
+  { 'user': 'fred',   'age': 40 },
+  { 'user': 'barney', 'age': 36 }
+];
+ 
+// 以 `user` 升序排序 再  `age` 以降序排序。
+orderBy(users, [['user'], ['age']], ['asc', 'desc']);
+
+```
+此时就可以正常返回结果，因为 每一个 iteratee 为数组，在 baseOrderBy 中 
+```js
+  if (Array.isArray(iteratee)) {
+    return (value) => baseGet(value, iteratee.length === 1 ? iteratee[0] : iteratee)
+  }
+```
+这里是数组，则会调用 `baseGet` 获取值，此时就不会报错，会正确返回结果
