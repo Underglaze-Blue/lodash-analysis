@@ -7,6 +7,16 @@
 `(object, other, orders)`
 > {(string|function)[]} orders - 可以指定多个维度的对比，为数组
 
+```js
+const a = [
+    {type: 10, name: 'Java'},
+    {type: 20, name: 'JavaScript'},
+    {type: 5, name: 'python'},
+]
+```
+
+这个时候就可以根据 type 和 name 进行排序，多个维度
+
 ## Return
 `number`
 ## Depend
