@@ -98,3 +98,9 @@ orderBy(users, [['user'], ['age']], ['asc', 'desc']);
   }
 ```
 这里是数组，则会调用 `baseGet` 获取值，此时就不会报错，会正确返回结果
+
+或者自己定义函数，iteratee 每次会返回当前的值
+```js
+orderBy(users, [(val) => val['user'], (val) => val['age']], ['asc', 'desc'])
+```
+这样也会返回正确的结果
