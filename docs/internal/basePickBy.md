@@ -1,9 +1,9 @@
 # basePickBy 
 
 ## Description 
-“pickBy”的基本实现。
+pickBy的基本实现。
 
-pickBy
+### pickBy
 > 创建一个对象，这个对象组成为从 object 中经 predicate 判断为真值的属性。 predicate 调用 2 个参数：(value, key)。
 >
 
