@@ -1,7 +1,7 @@
 # baseProperty 
 
 ## Description 
-创建并返回一个函数，这个函数可以传入一个 object ，从 object 中取出 baseProperty 指定的 key 的值
+创建并返回一个函数，这个函数可以传入一个 object ，从 object 中取出 baseProperty 指定的 key 的值 , 不支持深度路径
 ## Params
 `(key)`
 ## Return
