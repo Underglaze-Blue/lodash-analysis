@@ -22,7 +22,7 @@ function pullAllBy(array, values, iteratee) {
 }
 ```
 ## Analyze
-整理处理逻辑可 [pullAll](./pullAll.md) 一致，只不过多了将 `iteratee` 传递
+整体处理逻辑可 [pullAll](./pullAll.md) 一致，只不过多了将 `iteratee` 传递
 
 ## Example
 ```js
