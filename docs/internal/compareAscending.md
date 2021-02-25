@@ -106,6 +106,24 @@ function compareAscending(value, other) {
         - 当 引用字符串 在 比较字符串 后面时返回 1
         - 相同位置时返回 0
     - 切勿依赖于 -1 或 1 这样特定的返回值。不同浏览器之间（以及不同浏览器版本之间） 返回的正负数的值各有不同，因为 W3C 规范中只要求返回值是正值和负值，而没有规定具体的值。一些浏览器可能返回 - 2 或 2 或其他一些负的、正的值。
+   
+3. 这里的排序处理有点问题
+```js
+    const val = typeof value === 'string'
+      ? value.localeCompare(other)
+      : -other
+```
+对于这里如果默认升序的话，应当是
+```js
+    const val = typeof value === 'string'
+      ? value.localeCompare(other)
+      : value - other
+```
+
+是在 [这次](https://github.com/lodash/lodash/commit/47a6d538f5759fc5788f1bbb147caa7fde6b0a92) 提交的修改中出现的问题
+
+目前(2021-02-25) 还没有修复
+
 ## Example
 ```js
 console.log(compareAscending(3, 'aaa')) // 0
