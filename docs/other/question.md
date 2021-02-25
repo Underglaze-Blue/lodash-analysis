@@ -104,3 +104,57 @@ orderBy(users, [['user'], ['age']], ['asc', 'desc']);
 orderBy(users, [(val) => val['user'], (val) => val['age']], ['asc', 'desc'])
 ```
 这样也会返回正确的结果
+
+## [basePullAt](../internal/basePullAt.md)
+```js
+function basePullAt(array, indexes) {
+  let length = array ? indexes.length : 0
+  const lastIndex = length - 1
+
+  
+  while (length--) {
+    let previous
+    const index = indexes[length]
+    if (length === lastIndex || index !== previous) {
+      previous = index
+      if (isIndex(index)) {
+        array.splice(index, 1)
+      } else {
+        baseUnset(array, index)
+      }
+    }
+  }
+  return array
+}
+```
+
+在 `basePullAt` 中，因为要考虑到传入的 `indexes` 中有重复值的问题，所以在 `while` 循环中判断了 `index !== previous`
+
+但是 lodash 这里，将 `let` 定义放在了 `while` 循环体内部，每一次进入循环 `previous` 都是 `undefined`，并不能解决问题，这里有错误
+
+正确的应该将 `previous` 放在循环体之外定义，这样才可以拿到上一次的 `index` 的值作为对比
+
+可以这么对比，是因为在 `pullAt` 中，会对 `indexes` 进行排序处理
+
+修改后如下
+```js
+function basePullAt(array, indexes) {
+  let length = array ? indexes.length : 0
+  const lastIndex = length - 1
+
+  let previous
+  while (length--) {
+    const index = indexes[length]
+    if (length === lastIndex || index !== previous) {
+      previous = index
+      if (isIndex(index)) {
+        array.splice(index, 1)
+      } else {
+        baseUnset(array, index)
+      }
+    }
+  }
+  return array
+}
+```
+
