@@ -177,3 +177,23 @@ console.log(array)  // => [{ 'x': 2 }]
 示例中显示 `iteratee` 函数传入了 `'x'`,但是这在  `basePullAll` 中会报错，在 `basePullAll` 中，`iteratee` 函数是可调用的，会返回 `TypeError: iteratee is not a function`
 
 
+## [compareAscending](../internal/compareAscending.md)
+
+这里的排序处理有点问题
+```js
+    const val = typeof value === 'string'
+      ? value.localeCompare(other)
+      : -other
+```
+对于这里如果默认升序的话，应当是
+```js
+    const val = typeof value === 'string'
+      ? value.localeCompare(other)
+      : value - other
+```
+
+是在 [这次](https://github.com/lodash/lodash/commit/47a6d538f5759fc5788f1bbb147caa7fde6b0a92) 提交的修改中出现的问题
+
+目前(2021-02-25) 还没有修复
+
+
