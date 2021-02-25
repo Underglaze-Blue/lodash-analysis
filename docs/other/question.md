@@ -158,3 +158,22 @@ function basePullAt(array, indexes) {
 }
 ```
 
+## [pullAllBy](../export/pullAllBy.md)
+```js
+function pullAllBy(array, values, iteratee) {
+  return (array != null && array.length && values != null && values.length)
+    ? basePullAll(array, values, iteratee)
+    : array
+}
+```
+`pullAllBy` 代码本身没有问题，出问题是出在了 示例上
+
+```js
+const array = [{ 'x': 1 }, { 'x': 2 }, { 'x': 3 }, { 'x': 1 }]
+pullAllBy(array, [{ 'x': 1 }, { 'x': 3 }], 'x')
+console.log(array)  // => [{ 'x': 2 }]
+```
+
+示例中显示 `iteratee` 函数传入了 `'x'`,但是这在  `basePullAll` 中会报错，在 `basePullAll` 中，`iteratee` 函数是可调用的，会返回 `TypeError: iteratee is not a function`
+
+
