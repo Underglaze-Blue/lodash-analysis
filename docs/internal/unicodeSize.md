@@ -69,5 +69,5 @@ function unicodeSize(string) {
 2. 关于 unicode相关，可查看 [hasUnicode](./hasUnicode.md)
 ## Example
 ```js
-console.log(unicodeSize('😊😊😊😊😊😊😊')) // 7
+console.log(unicodeSize('😊😊😊😊😊😊😊微笑')) // 9
 ```
