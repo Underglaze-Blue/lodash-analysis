@@ -1,12 +1,12 @@
 # 平方求幂(快速幂)
 
-> 是一种简单而有效的小算法，它可以以`O(logn)`的时间复杂度计算乘方
+ 是一种简单而有效的小算法，它可以以 $O(\log n)$ 的时间复杂度计算乘方
 > 求出的幂结果实际上就是在变化过程中所有当指数为奇数时底数的乘积。
 > 
 
 在 JS 中，求一个数的幂，方法为 [Math.pow](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/pow)
 
-e.g
+_e.g_
 ```js
 Maht.pow(2, 3) // => 8
 ```
@@ -145,6 +145,7 @@ function pow(x, n) {
 
 我们以 n 为 奇数和偶数举例
 
+_e.g_
 ```js
 a = 1 // 0001
 n = 3 // 0011
@@ -165,7 +166,7 @@ n & a // 0000 => 0
 
 以 `n >>= 1` 代替了 `n = Math.floor(n / 2)`，[有符号右移](https://developer.mozilla.org/zh-CN/docs/conflicting/Web/JavaScript/Reference/Operators_7c8eb9475d97a4a734c5991857698560#%3E%3E_(%E6%9C%89%E7%AC%A6%E5%8F%B7%E5%8F%B3%E7%A7%BB)) 该操作符会将第一个操作数向右移动指定的位数。向右被移出的位被丢弃，拷贝最左侧的位以填充左侧。
 
-e.g
+_e.g_
 ```js
 n = 7 // 0111
 ```

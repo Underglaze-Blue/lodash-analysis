@@ -21,8 +21,24 @@ module.exports = {
   title: 'Lodash 源码分析',
   description: 'Analysis lodash.js deeply',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css'
+    }],
+    ['link', {
+      rel: "stylesheet",
+      href: "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+    }]
   ],
+  markdown: {
+    extendMarkdown: md => {
+      md.set({
+        html: true
+      })
+      md.use(require('markdown-it-katex'))
+    }
+  },
   themeConfig: {
     smoothScroll: true,
     repo: 'Underglaze-Blue/lodash-analysis',
