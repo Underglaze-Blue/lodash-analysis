@@ -3,7 +3,7 @@
 ## Description 
 获取 array 相对于 values 的差集
 
-e.g [1,2,3],[2,3,4] => [1]
+e.g `[1,2,3],[2,3,4] => [1]`
 ## Params
 `(array, values, iteratee, comparator)`
 > {Function} [iteratee] - 每个元素调用的迭代器
