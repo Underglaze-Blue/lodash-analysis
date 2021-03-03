@@ -196,4 +196,15 @@ console.log(array)  // => [{ 'x': 2 }]
 
 目前(2021-02-25) 还没有修复
 
+## [baseValues](../internal/baseValues.md)
+
+`baseValues` 整体的代码没有什么问题，只不过就是代码的文档写的返回值有问题，返回值本应该是 `Array` ，但是 `baseValues` 中写的返回值为 `Object`
+
+```
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array} props The property names to get values for.
+ * @returns {Object} Returns the array of property values.
+```
+
 
