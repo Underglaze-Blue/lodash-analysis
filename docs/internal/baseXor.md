@@ -201,7 +201,7 @@ inner, othIndex 为 2， 不做处理
 
 `baseDifference` 返回的差集，是指 **第一个数组相对第二个数组的 差集**
 
-[1,2,3],[2,3,4] => [1]
+`[1,2,3],[2,3,4] => [1]`
 ## Example
 ```js
 console.log(baseXor([
