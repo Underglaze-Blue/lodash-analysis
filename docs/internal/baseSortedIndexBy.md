@@ -140,6 +140,8 @@ function baseSortedIndexBy(array, value, iteratee, retHighest) {
 1. [Array.length MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/length) 属性的值是一个 0 到 232-1 的整数。
 
 2. baseSortedIndexBy 对于排好序的数组还是有一定的要求的，基本就是 数字在前，`null`  `undefined` `symbol` 等值在后，按照这种形式排序，会得到正确的 `index`
+
+3. 计算  `const mid = Math.floor((low + high) / 2)` 这里，可以改为 `const mid = (low + high) >>> 1`
 ## Example
 ```js
 console.log(baseSortedIndexBy([1,2,3,4,5], null, v => v)) // 5
