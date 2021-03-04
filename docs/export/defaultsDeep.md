@@ -31,6 +31,8 @@ function defaultsDeep(...args) {
 
 这里 `args` `push` `undefined` 是为了参数合法化，具体可以查看 `customDefaultsMerge` 参数和 `mergeWith` 所需要的参数
 
+## Remark
+1. [Function.prototype.apply() MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 ## Example
 ```js
  defaultsDeep({ 'a': { 'b': 2 } }, { 'a': { 'b': 1, 'c': 3 } }) // => { 'a': { 'b': 2, 'c': 3 } }
