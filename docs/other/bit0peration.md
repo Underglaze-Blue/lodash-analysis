@@ -1,4 +1,4 @@
-# 通过位运算进行数字取整及判断
+# JS 中的位运算
 
 [按位操作符](https://developer.mozilla.org/zh-CN/docs/conflicting/Web/JavaScript/Reference/Operators_7c8eb9475d97a4a734c5991857698560) 将其操作数（operands）当作 32 位的比特序列（由 0 和 1 组成），而不是十进制、十六进制或八进制数值。例如，十进制数 9，用二进制表示则为 1001。按位操作符操作数字的二进制形式，但是返回值依然是标准的 JavaScript 数值。
 
