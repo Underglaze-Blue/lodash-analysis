@@ -52,5 +52,5 @@ const a = {a: 1, b: 1}
 const b = Object.create(null)
 b.a = b.b = 1
 
-console.log(baseIsEqual(a,b,undefined,undefined)) // true
+console.log(baseIsEqual(a,b)) // true
 ```
