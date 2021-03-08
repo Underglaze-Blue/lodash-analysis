@@ -38,9 +38,11 @@ function baseIndexOf(array, value, fromIndex) {
 ```
 ## Analyze
 1. 判断 `value === value` ,调用 `strictIndexOf` 查找下标
+   
 2. 否则使用 `baseFindIndex` 查找，传给 `baseFindIndex` 的判断方法为 `baseIsNaN`
 ## Remark
 1. 全等操作符认为 `NaN` 与其他任何值都不全等，包括它自己。等式 (x !== x) 成立的唯一情况是 x 的值为 NaN
+   
 2. 对于 `NaN` 使用了自己定义的 `baseIsNaN` 进行判断，会返回 `true`
 3. [JavaScript 中的相等性判断 MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 4. [Array.prototype.indexOf() MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
