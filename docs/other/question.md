@@ -257,5 +257,41 @@ function forOwnRight(object, iteratee) {
 }
 ```
 
+## [intersectionBy](../export/intersectionBy.md)
+
+```js
+function intersectionBy(...arrays) {
+  let iteratee = last(arrays)
+  const mapped = map(arrays, castArrayLikeObject)
+
+  if (iteratee === last(mapped)) {
+    iteratee = undefined
+  } else {
+    mapped.pop()
+  }
+  return (mapped.length && mapped[0] === arrays[0])
+    ? baseIntersection(mapped, iteratee)
+    : []
+}
+```
+
+`intersectionBy` 这里对于 `iteratee` 的合法性并没有做校验，如果最后一项传入一个数字，得到的结果就不对，应当修改为 
+
+```js
+function intersectionBy(...arrays) {
+  let iteratee = last(arrays)
+  const mapped = map(arrays, castArrayLikeObject)
+
+  iteratee = typeof iteratee === 'function' ? iteratee : undefined
+  if (iteratee) {
+    mapped.pop()
+  }
+  
+  return (mapped.length && mapped[0] === arrays[0])
+    ? baseIntersection(mapped, iteratee)
+    : []
+}
+```
+
 
 
