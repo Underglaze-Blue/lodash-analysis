@@ -216,4 +216,46 @@ console.log(array)  // => [{ 'x': 2 }]
 
 因为使用的是 数组的 `forEach` ，所以，除了抛出错误之外，是不能结束迭代的
 
+## [forOwnRight](../export/forOwnRight.md)
+在 `forOwnRight` 的描述中，`forOwnRight` 函数是有返回值的，但是实际上，`forOwnRight` 函数是没有返回值的
+
+```js
+/**
+ * @param {Object} object The object to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Object} Returns `object`.
+ */
+```
+
+并且函数的 `iteratee` 的参数有错误，按照道理而言，第二个参数应当为当前遍历的 `key` ，这里传入的是 `iteratee`，应该改为 `props[length]`
+
+lodash `forOwnRight` 方法
+```js
+function forOwnRight(object, iteratee) {
+  if (object == null) {
+    return
+  }
+  const props = Object.keys(object)
+  let length = props.length
+  while (length--) {
+    iteratee(object[props[length]], iteratee, object)
+  }
+}
+```
+
+修改之后
+```js
+function forOwnRight(object, iteratee) {
+  if (object == null) {
+    return
+  }
+  const props = Object.keys(object)
+  let length = props.length
+  while (length--) {
+    iteratee(object[props[length]], props[length], object)
+  }
+}
+```
+
+
 
