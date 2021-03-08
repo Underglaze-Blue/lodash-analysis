@@ -41,6 +41,7 @@ const nodeTypes = ((() => {
 ```
 ## Analyze
 1. 首先通过检测 exports module 等来判断环境，和 [isBuffer](../export/isBuffer.md) 一致
+   
 2. 如果是 Node.js 环境，则直接通过 require('util') 将 util 加载进来，并通过 .types 取出
 3. 如果是 v10+ 版本之前，则是通过 process.binding 来加载模块
 4. 通过 tyr…catch 来避免有可能的错误，做一个容错处理

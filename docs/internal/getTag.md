@@ -34,6 +34,7 @@
 ## Analyze
 
 1. 判断 `value == null`
+   
 2. 如果 `value == undefined` ， 返回 `[object Undefined]`, 否则返回 `[object Null]`
 3. 调用 `toString.call(value)`，并返回结果
 
