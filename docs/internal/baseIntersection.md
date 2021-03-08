@@ -97,10 +97,13 @@ function baseIntersection(arrays, iteratee, comparator) {
 
 ### 交集
 1. 确定结果数组的长度。最终的结果数组长度肯定不会超过数组集中最短的数组长度。
-```js
-maxLength = Math.min(array.length, maxLength)
-```
+
+   ```js
+   maxLength = Math.min(array.length, maxLength)
+   ```
+
 2. lodash 思路是遍历数组集第一项（下标为0），如果第一个数组中的值，在剩余的每个数组中都存在，那就可以将它 push 到结果数组中，如果第一个数组中，有值在其他任一数组中不存在，则证明不是交集需要的值
+
 ```js
 while (--othIndex) {
     const cache = caches[othIndex]
@@ -112,6 +115,7 @@ while (--othIndex) {
     }
 }
 ```
+
 ### 取结果数组长度
 ```js
   const othLength = arrays.length
@@ -126,12 +130,14 @@ while (othIndex--) {
 }
 ```
 1. 首先获取到 整个 `arrays` 数组集的 `length`，定义结果数组 `result`
+   
 2. 定义 `maxLength` 为 `Infinity` ， 暂存 `othLength` 为 `othIndex`，做 递减使用
 3. `while` 循环遍历，每次都会更新 `maxLength` 为最小值
 4. 在最终 `while` 循环时，会根据 `maxLength` 作为结束条件判断
 
 ### iteratee
 iteratee 函数是用来处理值的，比如将字符串数字或者 boolean 转为数字等，对数组的每个元素都会调用
+
 ```js
 while (othIndex--) {
     array = arrays[othIndex]
@@ -147,6 +153,7 @@ while (othIndex--) {
 const computed = iteratee ? iteratee(value) : value
 ```
 1. `othIndex` 就是根据 `arrays.length` 来的，所以这里取值，获取数组集每一项
+   
 2. 如果 `othIndex` 不为 0，并且传入了 `iteratee` 函数，则针对于获取到的数组每一项进行 `map` 迭代，使用 `iteratee` 函数处理每一项的值
 3. 这里并没有处理 数组集第一项，是因为最终遍历时，要通过第一项的值来判断，第一项值的处理放到了最终的while循环中
 
@@ -176,6 +183,7 @@ caches[othIndex] = !comparator && (iteratee || (length >= 120 && array.length >=
     - 拿到数组第一项的长度(`arrays[0].length`) 和 数组集中的数组个数(`arrays.length`)
     - 定义了缓存的数组长度(`new Array(othLength)`)
     - 定义了结果数组 `result`
+   
 2. 第二步
     - 定义了 `array` 变量暂存，定义了结果数组的最大长度，缓存了 `arrays.length` 的长度(`othIndex`)
     - `while` 循环遍历
