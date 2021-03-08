@@ -208,3 +208,12 @@ console.log(array)  // => [{ 'x': 2 }]
 ```
 
 
+## [forOwn](../export/forOwn.md)
+在 forOwn 的描述中，有一点是错误的 **Iteratee functions may exit iteration early by explicitly returning false.**
+
+> Iterates over own enumerable string keyed properties of an object and invokes iteratee for each property. The iteratee is invoked with three arguments: (value, key, object). Iteratee functions may exit iteration early by explicitly returning false.
+> 
+
+因为使用的是 数组的 `forEach` ，所以，除了抛出错误之外，是不能结束迭代的
+
+
