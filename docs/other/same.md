@@ -61,3 +61,36 @@ JavaScript 中的全等（===）遵循这个规范，：
 9. 如果 x 是 Object，y 是 String、 Number 或 Symbol，将 x 转为原始类型，x y 进行比较，返回比较结果
 10. 返回 false
 
+
+## 特别的一点
+`>` `<` `>=` `<=` 并不适用于上述规则
+```js
+null > 0 // false
+null >= 0 // true
+```
+那么下一个问题，
+```js
+null == 0
+```
+返回的结果应该是什么
+
+答案是 `false`
+
+在 `null > 0` 的判断中， js 尝试将 `null` 转换为 数字，也就是 0 ，此时 `0 > 0` 是 `false`
+在 `null >= 0` 的判断中，也是如此，会转为 0，所以 `null >= 0` 是 `true`
+
+但是 `null == 0`,并不适用此转换规则
+
+`>` `<` `>=` `<=` 适用 [Abstract Relational Comparison](https://tc39.es/ecma262/#sec-abstract-relational-comparison) ,简单翻译就是
+
+1. 首先，使用 Symbol.ToPrimitive 将对象转换为原始值
+2. 如果两个值都是字符串，则根据它们所包含的 Unicode码点 的值，将它们作为字符串进行比较。
+3. 否则 JavaScript 会尝试将非数字类型转换为数值。
+   - 布尔值 tru e和 false 分别转换为 1 和 0。
+   - null 被转换为 0
+   - undefined 被转换为 NaN。
+   - 字符串根据其包含的值进行转换，如果不包含数值，则转换为 NaN。
+4. 如果任何一个值是 NaN，运算符返回 false。
+5. 否则，数值将作为数值进行比较。
+
+
