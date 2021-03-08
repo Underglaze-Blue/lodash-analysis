@@ -65,13 +65,13 @@ module.exports = {
       {
         title: 'Internal',   // 必要的
         path: '/internal/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-        collapsable: false,
+        collapsable: true,
         sidebarDepth: 0,
         children: handleChildren('internal', internal_path)
       },
       {
         title: 'Export',
-        collapsable: false,
+        collapsable: true,
         path: '/export/',
         sidebarDepth: 0,
         children: handleChildren('export', export_path),

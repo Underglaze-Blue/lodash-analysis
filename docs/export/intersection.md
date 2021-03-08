@@ -36,7 +36,7 @@ function intersection(...arrays) {
 ## Analyze
 1. 首先通过 `map` 函数，对传入的 `arrays` 进行和参数合法化的处理，这里传入的函数为 `castArrayLikeObject` ，即 如果 `value` 为数组，则返回 `value` ，否则返回空数组
    
-2. 这里进行了判断，如果 `mapped` 有长度，并且 `mapped[0] === arrays[0]`，如果传入的 `arrays` ，第一项都不合法的话，那肯定没有交集，返回空数组即可
+2. 这里进行了判断，如果 `mapped` 有长度，并且 `mapped[0] === arrays[0]`，如果传入的 `arrays` 第一项都不合法的话，那肯定没有交集，返回空数组即可
 
 ## Example
 ```js
