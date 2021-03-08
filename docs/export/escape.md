@@ -1,7 +1,7 @@
 # escape
 
 ## Description
-转义 string 中的 "&", "<", ">", '"',"'", 和"`" 字符为 HTML 实体字符。
+转义 string 中的 `&`, `<`, `>`, `"`,`'`, 和`` ` `` 字符为 HTML 实体字符。
 ## Params
 `string`
 ## Return
