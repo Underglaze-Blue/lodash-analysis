@@ -36,11 +36,13 @@
 
 ## Analyze
 1. 调用 `isObjectLike` 和 `getTag` 判断是否满足 `!null` && `'[object Object]'`
+   
 2. 调用 `Object.getPrototypeOf(value)`, 判断是否原型为 `null`，如果为`null` 则返回 `true`
 3. 通过 `while` 循环遍历整个对象的原型链，如果最顶层的原型和`value`的一致，返回`true`
 
 ## Remark
 1. Object.getPrototypeOf 返回指定对象的原型（__proto__） 
+   
 2. Object.create(null) ,也是一个对象,原型为 null
 3. 通过 while 循环遍历，而不直接使用 Object.prototype, 是为了考虑 js 环境的问题，如 iframe 的父级和子级，他们的 Object.prototype 可能不一致
 4. [Object.getPrototypeOf MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf)
