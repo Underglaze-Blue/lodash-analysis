@@ -88,6 +88,7 @@
 
 ## Remark
 1. `memoize` 的使用其实就是判断缓存池(`memoized.cache`)里是否存在与之对应的 `key`，如果存在，就直接返回结果，不执行原函数
+   
 2. [Map MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)
 3. [WeakMap MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 #### Objects 和 maps 的比较
