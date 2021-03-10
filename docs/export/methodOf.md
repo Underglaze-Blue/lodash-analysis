@@ -23,7 +23,7 @@ function methodOf(object, args) {
 ```
 
 ## Analyze
-和 [`method`](./method.md) 不同的是，这是规定了 `object`，而 `path` 是传入的参数
+和 [method](./method.md) 不同的是，这是规定了 `object`，而 `path` 是传入的参数
 
 ## Example
 ```js
