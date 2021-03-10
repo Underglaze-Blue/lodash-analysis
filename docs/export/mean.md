@@ -13,7 +13,7 @@
 ```js
 import baseMean from './meanBy.js'
 ```
-> [meanBy](./meanBy.md)
+> [meanBy 源码分析](./meanBy.md)
 
 ## Code
 ```js
