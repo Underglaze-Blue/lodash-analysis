@@ -70,6 +70,7 @@ function baseSet(object, path, value, customizer) {
 ```
 ## Analyze
 1. 首先判断如果不是 `object` 类型，则直接返回
+   
 2. 使用 `castPath` 将 `path` 转换为 路径数组，拿到 `length`，拿到最后一个元素的索引 `lastIndex`， 将 `object` 赋值给 `nested`
 3. `while` 循环进行路径的设置，结束条件为 `nested != null && ++index < length`
 4. 首先将当前 路径转换为对象可设置的 `key`，在不是最后一个元素时，`newValue` 会等于 `objValue` 或者空数组或空对象，具体判断条件如下
