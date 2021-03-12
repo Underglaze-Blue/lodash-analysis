@@ -31,6 +31,6 @@ function someValues(object, predicate) {
 
 ## Example
 ```js
-console.log(someValues(obj, (v) => v>0)) // true
+console.log(someValues(obj, (v) => v>2)) // true
 console.log(someValues(obj, (v) => v>4)) // false
 ```
