@@ -3,9 +3,9 @@
 ::: tip 提示
 和现有 npm 能下载的最新版本不同， lodash 在更新过程中也会删除一些方法，或者重新实现一些方法。
 
-本次源码分析只针对于 GitHub 上 [master](https://github.com/lodash/lodash) 分支下的代码
+本次源码分析只针对于 GitHub 上 lodash [master](https://github.com/lodash/lodash) 分支下的代码
 
-如果在对比过程中发现有代码更新的部分，可以在 当前源码分析的 Git 仓库中找到对应的 [lodash](https://github.com/Underglaze-Blue/lodash-analysis/tree/main/lodash) 代码
+因为写源码分析时，时间是 2021年1月，在后续有可能 lodash 会更新一些内容，因此如果在对比过程中发现有代码更新的部分，可以在 当前源码分析的 GitHub 仓库中找到对应的 [lodash](https://github.com/Underglaze-Blue/lodash-analysis/tree/main/lodash) 代码
 :::
 
 ## 目录
