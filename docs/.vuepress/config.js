@@ -56,15 +56,18 @@ module.exports = {
           { text: 'Lodash GitHub', link: 'https://github.com/lodash/lodash' }
         ]
       },
+      {
+        text: 'Mozilla',
+        link: 'https://developer.mozilla.org/zh-CN/'
+      }
     ],
     sidebar: [
-      {
-        title: 'Home',
-        path: '/'
-      },
+      // {
+      //   title: 'Home',
+      //   path: '/'
+      // },
       {
         title: 'Internal',   // 必要的
-        path: '/internal/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
         collapsable: true,
         sidebarDepth: 0,
         children: handleChildren('internal', internal_path)
@@ -72,14 +75,12 @@ module.exports = {
       {
         title: 'Export',
         collapsable: true,
-        path: '/export/',
         sidebarDepth: 0,
         children: handleChildren('export', export_path),
       },
       {
         title: 'Other',
         collapsable: false,
-        path: '/other/',
         sidebarDepth: 0,
         children: handleChildren('other', other_path)
       }
