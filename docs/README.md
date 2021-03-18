@@ -1,8 +1,8 @@
 ---
 home: true
 heroText: Lodash 源码分析
-actionText: 快速上手 →
-actionLink: /export/add
+actionText: 开始 →
+actionLink: /other/start
 ---
 ::: tip Info
 lodash Versions : lodash@5.0.0
