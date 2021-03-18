@@ -62,10 +62,14 @@ module.exports = {
       }
     ],
     sidebar: [
-      // {
-      //   title: 'Home',
-      //   path: '/'
-      // },
+      {
+        title: 'Start',
+        collapsable: false,
+        sidebarDepth: 0,
+        children: [
+          '/start/start.md'
+        ]
+      },
       {
         title: 'Internal',   // 必要的
         collapsable: true,

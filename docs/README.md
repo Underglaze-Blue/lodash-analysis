@@ -2,7 +2,7 @@
 home: true
 heroText: Lodash 源码分析
 actionText: 开始 →
-actionLink: /other/start
+actionLink: /start/start
 ---
 ::: tip Info
 lodash Versions : lodash@5.0.0
