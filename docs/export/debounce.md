@@ -202,6 +202,7 @@ let trailing = true
 const useRAF = (!wait && wait !== 0 && typeof root.requestAnimationFrame === 'function')
 ```
 1. `lastCallTime` 上次执行 `debounced` 函数的时间
+   
 2. `lastInvokeTime` 上一次调用 `func` 的时间
 3. `timerId` `setTimeout` 或 `requestAnimationFrame` 返回的 `id`
 4. `maxWait` 设置 `func` 允许被延迟的最大值
@@ -226,6 +227,7 @@ if (isObject(options)) {
 }
 ```
 1. 如果传入的 `func` 不是一个 `function` ，则抛出 类型错误
+   
 2. 传入的 `wait` 通过 一元正号 进行转换，如果能转成数字，则使用 `wait` 的值，否则可能为 `NaN`, 则 取 0
 3. 对于传入的 `options` 配置进行处理
     - `leading` 使用双非转为 `Boolean` 值
@@ -245,7 +247,7 @@ if (isObject(options)) {
     return result
   }
 ```
-`invokeFunc` 方法主要作用是 执行 `func` ，并且更新记录了 上一次执行 `func` 的时间，并且会对 `lastArgs` 和 `lastThis` 进行重置
+`invokeFunc` 方法主要作用是 执行 `func` ，并且更新 上一次执行 `func` 的时间，并且会对 `lastArgs` 和 `lastThis` 进行重置
 
 ### startTimer
 ```js
@@ -261,7 +263,7 @@ if (isObject(options)) {
 
 这里就是判断了是使用 `setTimeout` 还是 `requestAnimationFrame`
 
-这里会返回 `timerId`
+这里会返回 `timerId` 用作取消使用
 
 ### cancelTimer
 ```js
@@ -287,7 +289,7 @@ if (isObject(options)) {
 ```
 `leadingEdge` 是在 每轮 `debounce` 开始时调用，会记录 上一次调用 `func` 的时间，第二步则是 调用 `timerExpired` 来进行 `timer` 的重启
 
-最后会判断 如果 `leading` 为真，则会立即调用 `invokeFunc` 函数，不会等到 `timer` 到时间，也就是指定在延迟开始前调用
+最后会判断 如果 `leading`(指定在延迟开始前调用) 为真，则会立即调用 `invokeFunc` 函数，不会等到 `timer` 到时间，也就是指定在延迟开始前调用
 
 ### remainingWait
 ```js
@@ -326,6 +328,7 @@ if (isObject(options)) {
 `shouldInvoke` 作用是 判断是否需要执行，拿到时间差之后会进行判断，4种情况会返回 true
 
 1. 第一次调用 `lastCallTime === undefined`
+   
 2. 距离上次调用 `debounced` 的时间 大于等于 `wait` 的时间
 3. 系统时间倒退
 4. 设置了 `maxWait`，距离上次调用 `func` 时间 大于等于 `maxWait`
@@ -421,12 +424,13 @@ if (isObject(options)) {
     return result
   }
 ```
-1. 首先拿到当前时间以及判断是否要调用，定义了参数，this 等等
+1. 首先拿到当前时间以及判断是否要调用，定义了参数，`this` 等等
+   
 2. 如果 `isInvoking` 为 `true`，并且 `timerId` 为 `undefined`，则会调用 `leadingEdge` 函数，这里会处理开启定时器，记录上一次调用 `func` 的时间，以及判断是否在延迟开始前调用
 3. 如果 `isInvoking` 为 `false` （调用 trailingEdge 之后，在执行 `debounced` 可能会碰到 `shouldInvoke` 返回 `false` 的情况），那么则调用 `startTimer` 重新开始 timer
 
 ### if(maxing)
-一开始我没看明白 if (maxing) 里面这段代码的作用，按理说，是不会执行这段代码的，后来我去 lodash 的仓库里看了 test 文件，发现对这段代码，专门有一个 case 对其测试。我剥除了一些代码，并修改了测试用例以便展示，如下
+一开始我没看明白 `if (maxing)` 里面这段代码的作用，按理说，是不会执行这段代码的，后来我去 `lodash` 的仓库里看了 test 文件，发现对这段代码，专门有一个 `case` 对其测试。我剥除了一些代码，并修改了测试用例以便展示，如下
 
 ```js
 var limit = 320,
