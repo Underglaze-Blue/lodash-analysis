@@ -50,6 +50,10 @@ module.exports = {
     searchMaxSuggestions: 10,
     nav: [
       {
+        text: 'Bolg',
+        link: 'https://underglaze-blue.github.io/blog/'
+      },
+      {
         text: 'Lodash',
         items: [
           { text: 'Lodash文档', link: 'https://www.lodashjs.com/' },
